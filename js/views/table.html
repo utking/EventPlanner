@@ -1,0 +1,43 @@
+<legend>Events List</legend>
+<div class="form-group pull-right">
+	<p class="form-control-static">Events: {{events.length}} item(s)</p>
+</div>
+<div class="form-group">
+	<a class="btn btn-default" href="#/create">Add an event</a>
+</div>
+
+<div class="form-group">
+	<table class="table table-striped table-hover table-bordered" ng-show="events.length">
+		<thead>
+			<tr>
+				<th>Event</th>
+				<th class="event event-type">Type</th>
+				<th class="event host">Host</th>
+				<th class="event long-start-date">Begins</th>
+				<th class="event short-start-date">Begins</th>
+				<th class="event endtime">Ends</th>
+				<th class="event guests">Guests</th>
+				<th class="event where">Where</th>
+				<th class="event action">Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="evt in events track by $index" ng-cloak="">
+				<td><a ng-href="#/view/{{evt.id}}" ng-bind="evt.name"></td>
+				<td ng-bind="evt.type" class="event event-type"></td>
+				<td ng-bind="evt.host" class="event host"></td>
+				<td ng-bind="evt.start_datetime | date:'MMM dd, yyyy hh:mm a'" class="event long-start-date"></td>
+				<td ng-bind="evt.start_datetime | date:'MM/dd/yy HH:mm'" class="event short-start-date"></td>
+				<td ng-bind="evt.end_datetime| date:'MMM dd, yyyy hh:mm a'" class="event endtime"></td>
+				<td ng-bind="evt.guests" class="event guests"></td>
+				<td ng-bind="evt.where" class="event where"></td>
+				<td class="event action">
+					<div class="btn-group action-block">
+						<a title="Edit" class="btn btn-xs glyphicon glyphicon-edit" ng-href="#/edit/{{evt.id}}"></a>
+						<span title="Delete" class="btn btn-xs glyphicon glyphicon-remove" ng-click="deleteEvent(evt)"></span>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

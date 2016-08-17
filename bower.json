@@ -1,0 +1,22 @@
+{
+  "name": "event_planner",
+  "description": "EventPlanner Project",
+  "main": "index.html",
+  "authors": [
+    "utking@mail.ru"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "^1.5.8",
+    "angular": "angularjs#^1.5.8",
+    "bootstrap": "^3.3.7"
+  }
+}

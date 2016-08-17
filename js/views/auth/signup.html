@@ -1,0 +1,54 @@
+<form name="addEventForm" ng-submit="registerUser(newUser)"
+	class="form-horizontal col-md-6 col-md-offset-3" role="form">
+	<legend>Sign Up</legend>
+
+	<div class="form-group">
+		<label for="username" class="col-sm-4 control-label">User name:</label>
+		<div class="col-sm-8">
+			<input type="text" name="username" id="username" maxlength="16" 
+				ng-blur="checkUsername()"
+				required="required" ng-model="newUser.username" autocomplete="username"
+				placeholder="username" class="form-control" minlength="3" autofocus="">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label for="password" class="col-sm-4 control-label">Password:</label>
+		<div class="col-sm-8">
+			<input type="password" name="password" id="password" maxlength="100" 
+				required="required" ng-model="newUser.password" autocomplete="new-password"
+				placeholder="password" class="form-control" minlength="16">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label for="confirm" class="col-sm-4 control-label">Password confirmation:</label>
+		<div class="col-sm-8">
+			<input type="password" name="confirm" id="confirm" maxlength="100" 
+				required="required" ng-model="newUser.confirmation" autocomplete="off"
+				placeholder="confirm password" class="form-control" minlength="16">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label for="email" class="col-sm-4 control-label">Email:</label>
+		<div class="col-sm-8">
+			<div class=" input-group">
+			<span class="input-group-addon">@</span> 
+			<input type="email" name="email" id="email" required="required"
+				autocomplete="email" ng-model="newUser.email" autocomplete="email" 
+				placeholder="email" class="form-control">
+			</div>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="col-sm-offset-4 col-sm-8">
+			<input type="reset" name="cancelButton" class="btn btn-default" 
+				ng-click="cancelSignup()" value="Cancel">
+			<input type="submit" name="saveButton" class="btn btn-primary" 
+				value="Save" ng-click="checkValidity()" id="submitButton">
+		</div>
+	</div>
+
+</form>

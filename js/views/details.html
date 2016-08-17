@@ -1,0 +1,57 @@
+<div role="form">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h1 class="panel-title" ng-bind="event.name"></h1>
+			<p class="panel-subheader" ng-bind-template="({{event.type}})"></p>
+		</div>
+
+		<div class="panel-body">
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Host:</label>
+				<div class="col-sm-9">
+					<p ng-bind="event.host"></p>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Where:</label>
+				<div class="col-sm-9">
+					<p ng-bind="event.where"></p>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">When:</label>
+				<div class="col-sm-9">
+					<p ng-bind="event.start_datetime | date:'MMMM dd, yyyy hh:mm a'"></p>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Ends:</label>
+				<div class="col-sm-9">
+					<p ng-bind="event.end_datetime | date:'MMMM dd, yyyy hh:mm a'"></p>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Guests:</label>
+				<div class="col-sm-9">
+					<ul>
+						<li ng-repeat="item in listGuests(event.guests) track by $index" ng-bind="item"></li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+<div class="col-sm-offset-2 col-sm-10">
+	<a ng-href="#/" class="btn btn-default">Back to list</a>
+	<a ng-href="#/edit/{{event.id}}" class="btn btn-primary">Edit</a>
+	<a ng-click="deleteEvent(event)" class="btn btn-danger">Delete</a>
+</div>

@@ -1,0 +1,19 @@
+{
+  "name": "event_planner",
+  "version": "1.0.0",
+  "description": "EventPlanner Project",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "utking@mail.ru",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp-minify-css": "^1.2.4",
+    "gulp-minify-html": "^1.0.6",
+    "gulp-rev": "^7.1.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^2.0.0",
+    "gulp-usemin": "^0.3.23"
+  }
+}
